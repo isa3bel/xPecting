@@ -25,9 +25,11 @@
     // Add a new document in collection "cities"
     console.log(firstName.value + lastName.value);
     var ref = db.collection("Patients").doc(firstName.value + lastName.value);
-    ref.set({
-      firstname: document.getElementById("firstNameRe"),
-    })
+    var setWithMerge = ref.set({
+      weightSecond: document.getElementById("weight2").value,
+
+  }, { merge: true });
+  window.location = 'homepage.html';
   })
 
 }());

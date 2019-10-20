@@ -35,6 +35,7 @@
     })
     .then(function() {
       console.log("Document successfully written!");
+      window.location = 'homepage.html';
     })
     .catch(function(error) {
       console.error("Error writing document: ", error);
