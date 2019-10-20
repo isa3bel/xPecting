@@ -19,6 +19,9 @@
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
   const btnSignup = document.getElementById('btnSignup');
+  const motherRadio = document.getElementById('mother');
+  const midWifeRadio = document.getElementById('midwife');
+  const doctor = document.getElementById('doctor');
 
   // Add login event
   btnLogin.addEventListener('click', e => {
@@ -27,6 +30,15 @@
     const pass = txtPassword.value;
     
     const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
+    if (motherRadio.checked) {
+      window.location = 'mother.html';
+    } else if(midWifeRadio.checked) {
+      window.location = 'midwife.html';
+    } else if(doctor.checked) {
+      window.location = 'homepage.html';
+    } else {
+      console.log('choose role');
+    }
     
     promise.catch(e=> document.getElementById("loginFailed").innerHTML = 'Login Failed!<br>Please confirm you entered the correct email address and password');
   });
@@ -45,8 +57,7 @@
   // Add realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
-      console.log(firebaseUser);
-      window.location = 'homepage.html';
+      console.log('logged in');
     } else {
       console.log('not logged in');
 
