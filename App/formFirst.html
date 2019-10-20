@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Patient</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	body {font-family: Arial, Helvetica, sans-serif;}
+	* {box-sizing: border-box;}
+
+	input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+	}
+
+input[type=submit] {
+  background-color: #30E1E9;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #25A4AA;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #F2F2F2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>New Patient</h3>
+
+<div class="container">
+  <form action=""> <!-- Submit form here -->
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Patient's first name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Patient's last name..">
+    <label for="dob">Date of Birth</label>
+    <input type="text" id="dob" name="txtdob" placeholder="MM/DD/YYYY">
+
+    <label for="height">Height</label>
+    <input type="text" id="height" name="txtheight" placeholder="Meters">
+
+    <label for="weight">Weight</label>
+    <input type="text" id="weight" name="txtweight" placeholder="Kilograms">
+
+    <label for="noPreg">Number of Pregnancies</label>
+    <input type="text" id="noPreg" name="txtnoPreg" placeholder="e.g.: 0, 1, 2...">
+
+    <label for="gestAge">Gestational Age</label>
+    <input type="text" id="gestAge" name="txtgestAge" placeholder="Weeks">
+
+
+    <label for="condition">Condition</label>
+    <textarea id="condition" name="condition" placeholder="Patient's Condition" style="height:120px"></textarea>
+
+    <label for="prescription">Prescriptions</label>
+    <textarea id="prescription" name="txtpres" placeholder="Medicines, etc." style="height:120px"></textarea>
+
+    <label for="nextApt">Next Appointment</label>
+    <input type="text" id="nextApt" name="txtnextApt" placeholder="MM/DD/YYYY">
+
+    <label for="comments">Comments</label>
+    <textarea id="comments" name="txtcmt" placeholder="Notes/comments..." style="height:120px"></textarea>
+    <center>
+	    <input type="submit" value="Submit">
+	</center>
+  </form>
+</div>
+
+</body>
+</html>
+
