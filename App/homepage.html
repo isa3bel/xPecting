@@ -9,6 +9,9 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 <style>
+  img {
+        width: 25%;
+      }
       body {font-family: Arial, Helvetica, sans-serif;}
       button{
         background-color: #30E1E9;
@@ -28,7 +31,7 @@
         padding: 20px;
       }
       input{
-        width: 50%;
+        width: 25%;
         padding: 12px;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -44,29 +47,35 @@
 
 <html>
 <center>
+  <img src="logonew.png" alt="xPecting" >
   <h2>Doctor's Homepage</h2>
   <body>
     <input type="text" id="firstSearch" placeholder="first name">
+    <br>
     <input type="text" id="lastSearch" placeholder="last name">
+    <br>
     <button id="searchUser" class="btn btn-action">
         Search
     </button>
-
-    <div>
-      <p id="users">
-        
-      </p>
-      <button id="btnLogout" class="btn btn-action">
-          Logout
-      </button>
       <button id="addUser" class="btn btn-action">
           Add Patient
       </button>
       <button id="updateUser" class="btn btn-action">
-          Update User
+          Update Patient
+      </button>
+      <button id="btnLogout" class="btn btn-action">
+          Logout
       </button>
     </div>
 </center>
+  <div class="container">
+      <center>    
+        <p id="resTitle">
+      </center>
+
+      <p id="users">    
+      <p id="rev">
+    </p>
 
     <script src="homepage.js"></script>
   </body>

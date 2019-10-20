@@ -36,6 +36,7 @@
       snapshot.forEach(doc => {
         if (userId === doc.id) {
           firebase.firestore().collection('Patients').get().then(snapshot => {
+                document.getElementById('resTitle').innerHTML = "Patient Result";
             var html = '';
                 html += "<br>";
                 html += "First name: " + doc.data().firstName + "<br>";
@@ -51,9 +52,36 @@
                 html += "Comments: " + doc.data().comments + "<br>";
                 html += "<br>";
                 document.getElementById('users').innerHTML = html;
+                //TODO: Access collection Revisit
+                //^ DONE
+                var html1 = '';
+                firebase.firestore().collection('Patients').doc(userId).collection('Revisit').get().then(snapshot => {
+                  snapshot.forEach(doc => {
+                
+                    html1 += "<b>Revisits</b>:<br>";
+                    html1 += "Date: " + doc.id + "<br>";
+                    html1 += "New Weight: " + doc.data().weightSecond + "<br>";
+                    html1 += "Abdominal Perimeter: " + doc.data().diameter + "<br>";
+                    html1 += "Uterine Height: " + doc.data().uterheight + "<br>";
+                    html1 += "BP: " + doc.data().bloodpressure + "<br>";
+                    html1 += "HR: " + doc.data().heartrate + "<br>";
+                    html1 += "RR: " + doc.data().resprate + "<br>";
+                    html1 += "Temperature: " + doc.data().temperature + "<br>";
+                    html1 += "Fetal Heart Rate: " + doc.data().fetalhr + "<br>";
+                    html1 += "Lab Tests: " + doc.data().lab + "<br>";
+                    html1 += "Vaccines: " + doc.data().vaccines + "<br>";
+                    html1 += "Symptoms: " + doc.data().symptoms + "<br>";
+                    html1 += "Prescription: " + doc.data().prescription + "<br>";
+                    html1 += "Comments: " + doc.data().comments + "<br>";                
+                  })
+                  document.getElementById('rev').innerHTML = html1;
+                });
+
           });
         } else {
-          document.getElementById('users').innerHTML = "User not found";
+          document.getElementById('resTitle').innerHTML = "Patient not found";
+          document.getElementById('users').innerHTML = "";
+          document.getElementById('rev').innerHTML = "";
         }
          
       });
@@ -70,7 +98,7 @@
         if (userId === doc.id) {
           window.location = 'formRevisit.html';
         } else {
-          document.getElementById('users').innerHTML = "User not found";
+          document.getElementById('users').innerHTML = "Patient not found";
     }})})});
     
 }());

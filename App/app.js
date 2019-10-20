@@ -19,7 +19,6 @@
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
   const btnSignup = document.getElementById('btnSignup');
-  
 
   // Add login event
   btnLogin.addEventListener('click', e => {
@@ -29,7 +28,7 @@
     
     const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
     
-    promise.catch(e=> document.getElementById("loginFailed").innerHTML = 'Login Failed!');
+    promise.catch(e=> document.getElementById("loginFailed").innerHTML = 'Login Failed!<br>Please confirm you entered the correct email address and password');
   });
 
   btnSignup.addEventListener('click', e => {

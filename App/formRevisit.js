@@ -16,20 +16,58 @@
   var db = firebase.firestore();
 
   var submit = document.getElementById('submitSecond');
-  const firstName = document.getElementById("firstNameRe");
-  const lastName = document.getElementById("lastNameRe");
-
-
-
+  var goback = document.getElementById('goBack');
+  const firstName = document.getElementById('firstNameRe');
+  const lastName = document.getElementById('lastNameRe');
+  const visitDate = document.getElementById('visitDate');
+//formRevisit will create a subcollection that contains all visits to the doctors
+//while maintaining the initial information of the patient
+submit.addEventListener('click', e => {
+  var ref = db.collection("Patients").doc(firstName.value + lastName.value).collection("Revisit").doc(visitDate.value);
+  var setWithMerge = ref.set({
+      weightSecond: document.getElementById('weight2').value,
+      diameter: document.getElementById('diameter').value,
+      uterheight: document.getElementById('uterheight').value,
+      bloodpressure: document.getElementById('bp').value,
+      heartrate: document.getElementById('hr').value,
+      resprate: document.getElementById('rr').value,
+      temperature: document.getElementById('temperature').value,
+      fetalhr: document.getElementById('fetalhr').value,
+      lab: document.getElementById('lab').value,
+      vaccines: document.getElementById('vaccines').value,
+      symptoms: document.getElementById('symptoms').value,
+      prescription: document.getElementById('prescription').value,
+      nextApt: document.getElementById('nextApt').value,
+      comments: document.getElementById('comments').value,
+    }, { merge: true })
+})
+/*
   submit.addEventListener('click', e => {
     // Add a new document in collection "cities"
     console.log(firstName.value + lastName.value);
     var ref = db.collection("Patients").doc(firstName.value + lastName.value);
     var setWithMerge = ref.set({
-      weightSecond: document.getElementById("weight2").value,
+      weightSecond: document.getElementById('weight2').value,
+      diameter: document.getElementById('diameter').value,
+      uterheight: document.getElementById('uterheight').value,
+      bloodpressure: document.getElementById('bp').value,
+      heartrate: document.getElementById('hr').value,
+      resprate: document.getElementById('rr').value,
+      temperature: document.getElementById('temperature').value,
+      fetalhr: document.getElementById('fetalhr').value,
+      lab: document.getElementById('lab').value,
+      vaccines: document.getElementById('vaccines').value,
+      symptoms: document.getElementById('symptoms').value,
+      prescription: document.getElementById('prescription').value,
+      nextApt: document.getElementById('nextApt').value,
+      comments: document.getElementById('comments').value,
 
   }, { merge: true });
-  window.location = 'homepage.html';
+  })*/
+
+  goback.addEventListener('click', e => {
+    window.location = 'homepage.html';
   })
+
 
 }());
