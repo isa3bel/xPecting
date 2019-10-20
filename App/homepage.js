@@ -36,6 +36,7 @@
       snapshot.forEach(doc => {
         if (userId === doc.id) {
           firebase.firestore().collection('Patients').get().then(snapshot => {
+                document.getElementById('resTitle').innerHTML = "Patient Result";
             var html = '';
                 html += "<br>";
                 html += "First name: " + doc.data().firstName + "<br>";
@@ -53,7 +54,8 @@
                 document.getElementById('users').innerHTML = html;
           });
         } else {
-          document.getElementById('users').innerHTML = "User not found";
+          document.getElementById('resTitle').innerHTML = "Patient not found";
+          document.getElementById('users').innerHTML = "";
         }
          
       });
@@ -70,7 +72,7 @@
         if (userId === doc.id) {
           window.location = 'formRevisit.html';
         } else {
-          document.getElementById('users').innerHTML = "User not found";
+          document.getElementById('users').innerHTML = "Patient not found";
     }})})});
     
 }());

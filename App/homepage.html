@@ -28,7 +28,7 @@
         padding: 20px;
       }
       input{
-        width: 50%;
+        width: 25%;
         padding: 12px;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -47,26 +47,30 @@
   <h2>Doctor's Homepage</h2>
   <body>
     <input type="text" id="firstSearch" placeholder="first name">
+    <br>
     <input type="text" id="lastSearch" placeholder="last name">
+    <br>
     <button id="searchUser" class="btn btn-action">
         Search
     </button>
-
-    <div>
-      <p id="users">
-        
-      </p>
-      <button id="btnLogout" class="btn btn-action">
-          Logout
-      </button>
       <button id="addUser" class="btn btn-action">
           Add Patient
       </button>
       <button id="updateUser" class="btn btn-action">
           Update User
       </button>
+      <button id="btnLogout" class="btn btn-action">
+          Logout
+      </button>
     </div>
 </center>
+  <div class="container">
+      <center>    
+        <p id="resTitle">
+      </center>
+
+      <p id="users">    
+    </p>
 
     <script src="homepage.js"></script>
   </body>
