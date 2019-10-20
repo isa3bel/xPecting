@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
 	<title>Revisit</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
@@ -42,9 +47,18 @@ button:hover {
 
 	<h3>Revisit</h3>
 	<div class="container">
-		<form action=""> <!-- Aciton here -->
+		<div action=""> <!-- Aciton here -->
+			<div class="container">
+				<label for="firstNameRe">First Name</label>
+				<input type="text" placeholder="First Name" id="firstNameRe">
+
+				<label for="lastNameRe">Last Name</label>
+				<input type="text" name="lastNameRe" placeholder="Last Name" id="lastNameRe">
+
+			</div>
+
 			<label for="weight">Weight</label>
-			<input type="text" name="txtweight" placeholder="Kilograms">
+			<input type="text" name="txtweight" id="weight2" placeholder="Kilograms">
 			<h4>Belly Measurements</h4>
 			<div class="container">
 				<label for="diameter">Abdominal Perimeter</label>
@@ -94,7 +108,10 @@ button:hover {
 			<textarea id="comments" name="txtcomments" placeholder="Notes/Comments" style="height:120px"></textarea>
 
 			<center>
-				<input type="submit" name="Submit">
+				<Button id="submitSecond">
+					Submit
+				</Button>
 			</center>
-		</form>	
+		</div>	
+		<script src="formRevisit.js"></script>
 	</div>
