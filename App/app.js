@@ -29,7 +29,7 @@
     
     const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
     
-    promise.catch(e=> console.log(e.message));
+    promise.catch(e=> document.getElementById("loginFailed").innerHTML = 'Login Failed!');
   });
 
   btnSignup.addEventListener('click', e => {
@@ -50,6 +50,7 @@
       window.location = 'homepage.html';
     } else {
       console.log('not logged in');
+
     }
 
   });
