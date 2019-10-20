@@ -12,6 +12,7 @@
   
   firebase.initializeApp(firebaseConfig);
   const btnLogout = document.getElementById('btnLogout');
+  const addUser = document.getElementById('addUser');
 
   btnLogout.addEventListener('click', e => {
     firebase.auth().signOut();
@@ -20,4 +21,7 @@
     
   });
 
+  addUser.addEventListener('click', e => {
+    window.location = 'formFirst.html';
+  });
 }());
