@@ -24,4 +24,17 @@
   addUser.addEventListener('click', e => {
     window.location = 'formFirst.html';
   });
+
+  var db = firebase.firestore();
+  var docRef = db.collection("Patients");
+  var allCities = docRef
+    .get()
+    .then(snapshot => {
+      snapshot.forEach(doc => {
+        console.log(doc.id, '=>', doc.data());
+      });
+    })
+    .catch(err => {
+      console.log('Error getting documents', err);
+    });
 }());
