@@ -1,4 +1,4 @@
-![Project Logo](/logonew.png)
+![Project Logo](MaternityHealthcareModel/App/logonew.png)
 ## Inspiration 
 
 Every single day,close to 800 woman die due to preventable causes related to pregnancy. The 9 months of gestation is tough for the expecting couple or the mother in particular and our vision is to create an efficient,effective and affordable maternity healthcare model that caters to the three segments of the process which is prepartum, labour and postpartum.We also envision to bring back the concept of midwife system into the birth process.This concept solves a lot of issues such a reduced uneasy hospital visits for the expecting mother, reduce in doctor appointment expenses, the doctor could outsource to a particular midwife center and hence being able to prioritize and treat patients efficiently, in developing countries midwife concept could open up a huge opportunity for education and vocational training for women in rural areas. 
