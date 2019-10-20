@@ -20,7 +20,7 @@
 
   submit.addEventListener('click', e => {
     // Add a new document in collection "cities"
-    db.collection("Patients").doc().set({
+    db.collection("Patients").doc(document.getElementById('fname').value + document.getElementById('lname').value).set({
       firstName: document.getElementById('fname').value,
       lastName: document.getElementById('lname').value,
       dateOfBirth: document.getElementById('dob').value,
@@ -39,9 +39,6 @@
     .catch(function(error) {
       console.error("Error writing document: ", error);
     });
-
-
-
   });
 
 }());
