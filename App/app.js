@@ -30,15 +30,7 @@
     const pass = txtPassword.value;
     
     const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
-    if (motherRadio.checked) {
-      window.location = 'mother.html';
-    } else if(midWifeRadio.checked) {
-      window.location = 'midwife.html';
-    } else if(doctor.checked) {
-      window.location = 'homepage.html';
-    } else {
-      console.log('choose role');
-    }
+    
     
     promise.catch(e=> document.getElementById("loginFailed").innerHTML = 'Login Failed!<br>Please confirm you entered the correct email address and password');
   });
@@ -58,6 +50,15 @@
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
       console.log('logged in');
+      if (motherRadio.checked) {
+      window.location = 'mother.html';
+    } else if(midWifeRadio.checked) {
+      window.location = 'midwife.html';
+    } else if(doctor.checked) {
+      window.location = 'homepage.html';
+    } else {
+      console.log('choose role');
+    }
     } else {
       console.log('not logged in');
 
