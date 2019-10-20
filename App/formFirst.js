@@ -24,6 +24,8 @@
       firstName: document.getElementById('fname').value,
       lastName: document.getElementById('lname').value,
       dateOfBirth: document.getElementById('dob').value,
+      height: document.getElementById('height').value,
+      weight: document.getElementById('weight').value,
       numberOfPregnancies: document.getElementById('noPreg').value,
       gestationalAge: document.getElementById('gestAge').value,
       condition: document.getElementById('condition').value,
@@ -38,7 +40,7 @@
       console.error("Error writing document: ", error);
     });
 
-    
+
 
   });
 
