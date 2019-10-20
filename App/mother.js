@@ -12,8 +12,6 @@
   
   firebase.initializeApp(firebaseConfig);
   const btnLogout = document.getElementById('btnLogout');
-  const addUser = document.getElementById('addUser');
-  const updateUser = document.getElementById('updateUser');
   const searchUser = document.getElementById('searchUser');
   const firstSearch = document.getElementById('firstSearch');
   const lastSearch = document.getElementById('lastSearch');

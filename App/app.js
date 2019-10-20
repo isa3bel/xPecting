@@ -28,11 +28,14 @@
     // get email and password
     const email = txtEmail.value;
     const pass = txtPassword.value;
+    var user = firebase.auth().currentUser;
+    if(user) {
+      firebase.auth().signOut();
+    }
     
-    const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
-    
-    
+    const promise = firebase.auth().signInWithEmailAndPassword(email, pass);  
     promise.catch(e=> document.getElementById("loginFailed").innerHTML = 'Login Failed!<br>Please confirm you entered the correct email address and password');
+    
   });
 
   btnSignup.addEventListener('click', e => {
@@ -49,16 +52,17 @@
   // Add realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
-      console.log('logged in');
       if (motherRadio.checked) {
       window.location = 'mother.html';
-    } else if(midWifeRadio.checked) {
-      window.location = 'midwife.html';
-    } else if(doctor.checked) {
-      window.location = 'homepage.html';
-    } else {
-      console.log('choose role');
-    }
+      } else if(midWifeRadio.checked) {
+        window.location = 'midwife.html';
+      } else if(doctor.checked) {
+        window.location = 'homepage.html';
+      } else {
+        console.log('choose role');
+      }
+      console.log('logged in');
+      
     } else {
       console.log('not logged in');
 
