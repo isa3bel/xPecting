@@ -54,7 +54,7 @@
                 firebase.firestore().collection('Patients').doc(userId).collection('Revisit').get().then(snapshot => {
                   snapshot.forEach(doc => {
                 
-                    html1 += "<b>Revisits</b>:<br>";
+                    html1 += "<br><b>Revisits</b>:<br>";
                     html1 += "Date: " + doc.id + "<br>";
                     html1 += "New Weight: " + doc.data().weightSecond + "<br>";
                     html1 += "Abdominal Perimeter: " + doc.data().diameter + "<br>";
