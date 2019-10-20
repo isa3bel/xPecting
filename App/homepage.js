@@ -25,16 +25,24 @@
     window.location = 'formFirst.html';
   });
 
-  var db = firebase.firestore();
-  var docRef = db.collection("Patients");
-  var allCities = docRef
-    .get()
-    .then(snapshot => {
-      snapshot.forEach(doc => {
-        console.log(doc.id, '=>', doc.data());
-      });
-    })
-    .catch(err => {
-      console.log('Error getting documents', err);
+  firebase.firestore().collection('Patients').get().then(snapshot => {
+    var html = '';
+    snapshot.forEach(doc => {
+        html += "First name: " + doc.data().firstName + "<br>";
+        html += "Last name: " + doc.data().lastName + "<br>";
+        html += "Date of birth: " + doc.data().dateOfBirth + "<br>";
+        html += "Height: " + doc.data().height + "<br>";
+        html += "Weight: " + doc.data().weight + "<br>";
+        html += "Parity: " + doc.data().numberOfPregnancies + "<br>";
+        html += "Last Menstruation Date: " + doc.data().gestationalAge + "<br>";
+        html += "Condition: " + doc.data().condition + "<br>";
+        html += "Prescriptions: " + doc.data().prescription + "<br>";
+        html += "Next Appointment: " + doc.data().nextApt + "<br>";
+        html += "Comments: " + doc.data().comments + "<br>";
+        document.getElementById('users').innerHTML = html;
     });
+    
+});
+  
+    
 }());
