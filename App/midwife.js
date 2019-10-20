@@ -86,6 +86,15 @@
 
   });
 
- 
+  updateUser.addEventListener('click', e => {
+    console.log('user id after found' + userId);
+    var userId = firstSearch.value + lastSearch.value;
+    firebase.firestore().collection('Patients').get().then(snapshot => {
+      snapshot.forEach(doc => {
+        if (userId === doc.id) {
+          window.location = 'formRevisit.html';
+        } else {
+          document.getElementById('users').innerHTML = "Patient not found";
+    }})})});
     
 }());
