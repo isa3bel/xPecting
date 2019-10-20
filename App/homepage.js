@@ -18,6 +18,20 @@
   const firstSearch = document.getElementById('firstSearch');
   const lastSearch = document.getElementById('lastSearch');
   
+  var initial = '';
+  firebase.firestore().collection('Patients').get().then(snapshot => {
+    snapshot.forEach(doc => {
+      var gestationAge = Math.floor(2 + Math.random()*(40 + 1 - 2));
+      initial += "First name: " + doc.data().firstName + "<br>";
+      initial += "Last name: " + doc.data().lastName + "<br>";    
+      initial += "Last Menstruation Date: " + doc.data().gestationalAge + "<br>";  
+      initial += "Gestational Age in Weeks: " + gestationAge + "<br>";  
+      initial += "Expected days until delivery: " + (280 - (gestationAge * 7)) + "<br>"; 
+      initial += "<br><br>";
+    })
+    document.getElementById('users').innerHTML = initial;
+  })
+
 
   btnLogout.addEventListener('click', e => {
     firebase.auth().signOut();
@@ -37,7 +51,7 @@
         if (userId === doc.id) {
           firebase.firestore().collection('Patients').get().then(snapshot => {
                 document.getElementById('resTitle').innerHTML = "Patient Result";
-            var html = '';
+                var html = '';
                 html += "<br>";
                 html += "First name: " + doc.data().firstName + "<br>";
                 html += "Last name: " + doc.data().lastName + "<br>";
@@ -58,7 +72,7 @@
                 firebase.firestore().collection('Patients').doc(userId).collection('Revisit').get().then(snapshot => {
                   snapshot.forEach(doc => {
                 
-                    html1 += "<b>Revisits</b>:<br>";
+                    html1 += "<br><b>Revisits</b>:<br>";
                     html1 += "Date: " + doc.id + "<br>";
                     html1 += "New Weight: " + doc.data().weightSecond + "<br>";
                     html1 += "Abdominal Perimeter: " + doc.data().diameter + "<br>";
