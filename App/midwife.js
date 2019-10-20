@@ -92,7 +92,7 @@
     firebase.firestore().collection('Patients').get().then(snapshot => {
       snapshot.forEach(doc => {
         if (userId === doc.id) {
-          window.location = 'formRevisit.html';
+          window.location = 'formRevisitMidwife.html';
         } else {
           document.getElementById('users').innerHTML = "Patient not found";
     }})})});
