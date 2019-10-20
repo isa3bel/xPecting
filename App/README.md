@@ -9,7 +9,7 @@ The app would be accessible to the expecting couple, midwife and the doctor and 
 
 ## How we built it
 
- we used firebase for the app. arduino uno for the contraction detection with touch and piezo sensors.
+Using HTML and Javascript, we created the website and stored database via firebase. Arduino uno for the contraction detection with touch and piezo sensors.
 
 ## Challenges we ran into
 
@@ -18,6 +18,8 @@ We had a tough time finding the database for the app. the three level entry at t
 ## Accomplishments that we're proud of
 
 We are extremely proud of the concept because it deals and solves many pain points spread over different stakeholders during the gestation period of a woman. We are proud of the final database that we created, since it authenticates users and stores data about each user. None of us had used firebase before.
+
+![Team Logo](/App/gallery.jpg)
 
 ## What we learned
 
