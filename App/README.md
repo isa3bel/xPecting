@@ -1,6 +1,6 @@
 ![Project Logo](/App/logonew.png)
 
-### Won best domain name at Health++ 2019
+### Winner at Health++ 2019
 
 ## Inspiration 
 
